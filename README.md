@@ -19,9 +19,9 @@ Quyidagi dasturning alternativasi:
 
 *Linux va Macos uchun*
 
-```
-sudo apt install jq curl //linux
-brew install jq curl //macos
+```bash
+sudo apt install jq curl #linux
+brew install jq curl #macos
 ```
 
 ```bash
