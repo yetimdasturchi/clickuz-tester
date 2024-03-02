@@ -1,0 +1,299 @@
+[
+    {
+        "description": "Ошибка в подписи при подготовке платежа",
+        "action": "prepare",
+        "sending_error_code": 0,
+        "expected_error_code": -1,
+        "go_to_script": 1,
+        "post": {
+            "click_trans_id": "27147",
+            "service_id": "",
+            "merchant_trans_id": "",
+            "merchant_prepare_id": "",
+            "amount": "500",
+            "action": "0",
+            "error": 0,
+            "error_note": "Ok",
+            "sign_time": "2024-03-02 07:50:19",
+            "sign_string": "",
+            "click_paydoc_id": "16853761"
+        }
+    },
+    {
+        "description": "Успешная подготовка платежа",
+        "action": "prepare",
+        "sending_error_code": 0,
+        "expected_error_code": 0,
+        "go_to_script": 2,
+        "post": {
+            "click_trans_id": "18409",
+            "service_id": "",
+            "merchant_trans_id": "",
+            "merchant_prepare_id": "",
+            "amount": "500",
+            "action": "0",
+            "error": 0,
+            "error_note": "Ok",
+            "sign_time": "2024-03-02 07:50:19",
+            "sign_string": "",
+            "click_paydoc_id": "16853761"
+        }
+    },
+    {
+        "description": "Ошибка в подписи при подтверждении платежа",
+        "action": "complete",
+        "sending_error_code": 0,
+        "expected_error_code": -1,
+        "go_to_script": 3,
+        "post": {
+            "click_trans_id": "26021",
+            "service_id": "",
+            "merchant_trans_id": "",
+            "merchant_prepare_id": "",
+            "amount": "500",
+            "action": "1",
+            "error": 0,
+            "error_note": "Ok",
+            "sign_time": "2024-03-02 07:50:19",
+            "sign_string": "",
+            "click_paydoc_id": "16853761"
+        }
+    },
+    {
+        "description": "Ошибка в сумме при подтверждении платежа",
+        "action": "complete",
+        "sending_error_code": 0,
+        "expected_error_code": -2,
+        "go_to_script": 4,
+        "post": {
+            "click_trans_id": "73907",
+            "service_id": "",
+            "merchant_trans_id": "",
+            "merchant_prepare_id": "",
+            "amount": "500",
+            "action": "1",
+            "error": 0,
+            "error_note": "Ok",
+            "sign_time": "2024-03-02 07:50:19",
+            "sign_string": "",
+            "click_paydoc_id": "16853761"
+        }
+    },
+    {
+        "description": "Успешное подтверждение платежа",
+        "action": "complete",
+        "sending_error_code": 0,
+        "expected_error_code": 0,
+        "go_to_script": 5,
+        "post": {
+            "click_trans_id": "11994",
+            "service_id": "",
+            "merchant_trans_id": "",
+            "merchant_prepare_id": "",
+            "amount": "500",
+            "action": "1",
+            "error": 0,
+            "error_note": "Ok",
+            "sign_time": "2024-03-02 07:50:19",
+            "sign_string": "",
+            "click_paydoc_id": "16853761"
+        }
+    },
+    {
+        "description": "Повторное подтверждение ранее успешного платежа",
+        "action": "complete",
+        "sending_error_code": 0,
+        "expected_error_code": -4,
+        "go_to_script": 6,
+        "post": {
+            "click_trans_id": "64307",
+            "service_id": "",
+            "merchant_trans_id": "",
+            "merchant_prepare_id": "",
+            "amount": "500",
+            "action": "1",
+            "error": 0,
+            "error_note": "Ok",
+            "sign_time": "2024-03-02 07:50:19",
+            "sign_string": "",
+            "click_paydoc_id": "16853761"
+        }
+    },
+    {
+        "description": "Попытка отмены ранее успешного платежа",
+        "action": "complete",
+        "sending_error_code": -1,
+        "expected_error_code": -4,
+        "post": {
+            "click_trans_id": "41357",
+            "service_id": "",
+            "merchant_trans_id": "",
+            "merchant_prepare_id": "",
+            "amount": "500",
+            "action": "1",
+            "error": -1,
+            "error_note": "Ok",
+            "sign_time": "2024-03-02 07:50:19",
+            "sign_string": "",
+            "click_paydoc_id": "16853761"
+        }
+    },
+    {
+        "description": "Не найден пользователь/заказ",
+        "action": "prepare",
+        "sending_error_code": 0,
+        "expected_error_code": -5,
+        "go_to_script": 8,
+        "post": {
+            "click_trans_id": "77816",
+            "service_id": "",
+            "merchant_trans_id": "",
+            "merchant_prepare_id": "",
+            "amount": "500",
+            "action": "0",
+            "error": 0,
+            "error_note": "Ok",
+            "sign_time": "2024-03-02 07:50:19",
+            "sign_string": "",
+            "click_paydoc_id": "16853761"
+        }
+    },
+    {
+        "description": "Успешная подготовка платежа",
+        "action": "prepare",
+        "sending_error_code": 0,
+        "expected_error_code": 0,
+        "go_to_script": 9,
+        "post": {
+            "click_trans_id": "66675",
+            "service_id": "",
+            "merchant_trans_id": "",
+            "merchant_prepare_id": "",
+            "amount": "500",
+            "action": "0",
+            "error": 0,
+            "error_note": "Ok",
+            "sign_time": "2024-03-02 07:50:19",
+            "sign_string": "",
+            "click_paydoc_id": "16853761"
+        }
+    },
+    {
+        "description": "Не найдена транзакция (проверка параметра merchant_prepare_id)",
+        "action": "complete",
+        "sending_error_code": 0,
+        "expected_error_code": -6,
+        "go_to_script": 10,
+        "post": {
+            "click_trans_id": "26216",
+            "service_id": "",
+            "merchant_trans_id": "",
+            "merchant_prepare_id": "",
+            "amount": "500",
+            "action": "1",
+            "error": 0,
+            "error_note": "Ok",
+            "sign_time": "2024-03-02 07:50:19",
+            "sign_string": "",
+            "click_paydoc_id": "16853761"
+        }
+    },
+    {
+        "description": "Успешное подтверждение платежа, complete",
+        "action": "complete",
+        "sending_error_code": 0,
+        "expected_error_code": 0,
+        "post": {
+            "click_trans_id": "27051",
+            "service_id": "",
+            "merchant_trans_id": "",
+            "merchant_prepare_id": "",
+            "amount": "500",
+            "action": "1",
+            "error": 0,
+            "error_note": "Ok",
+            "sign_time": "2024-03-02 07:50:19",
+            "sign_string": "",
+            "click_paydoc_id": "16853761"
+        }
+    },
+    {
+        "description": "Успешная подготовка платежа",
+        "action": "prepare",
+        "sending_error_code": 0,
+        "expected_error_code": 0,
+        "go_to_script": 12,
+        "post": {
+            "click_trans_id": "54679",
+            "service_id": "",
+            "merchant_trans_id": "",
+            "merchant_prepare_id": "",
+            "amount": "500",
+            "action": "0",
+            "error": 0,
+            "error_note": "Ok",
+            "sign_time": "2024-03-02 07:50:19",
+            "sign_string": "",
+            "click_paydoc_id": "16853761"
+        }
+    },
+    {
+        "description": "Отмена платежа",
+        "action": "complete",
+        "sending_error_code": -5017,
+        "expected_error_code": -9,
+        "go_to_script": 13,
+        "post": {
+            "click_trans_id": "19936",
+            "service_id": "",
+            "merchant_trans_id": "",
+            "merchant_prepare_id": "",
+            "amount": "500",
+            "action": "1",
+            "error": -5017,
+            "error_note": "Ok",
+            "sign_time": "2024-03-02 07:50:19",
+            "sign_string": "",
+            "click_paydoc_id": "16853761"
+        }
+    },
+    {
+        "description": "Повторная отмена платежа",
+        "action": "complete",
+        "sending_error_code": -5017,
+        "expected_error_code": -9,
+        "go_to_script": 14,
+        "post": {
+            "click_trans_id": "57096",
+            "service_id": "",
+            "merchant_trans_id": "",
+            "merchant_prepare_id": "",
+            "amount": "500",
+            "action": "1",
+            "error": -5017,
+            "error_note": "Ok",
+            "sign_time": "2024-03-02 07:50:19",
+            "sign_string": "",
+            "click_paydoc_id": "16853761"
+        }
+    },
+    {
+        "description": "Повторное подтверждение ранее отмененного платежа",
+        "action": "complete",
+        "sending_error_code": 0,
+        "expected_error_code": -9,
+        "post": {
+            "click_trans_id": "16994",
+            "service_id": "",
+            "merchant_trans_id": "",
+            "merchant_prepare_id": "",
+            "amount": "500",
+            "action": "1",
+            "error": 0,
+            "error_note": "Ok",
+            "sign_time": "2024-03-02 07:50:19",
+            "sign_string": "",
+            "click_paydoc_id": "16853761"
+        }
+    }
+]
