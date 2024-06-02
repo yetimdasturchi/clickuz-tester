@@ -80,8 +80,8 @@ for k in $(seq 0 $(echo "$jsonData" | jq length)); do
         echo "[xatolik] $description"
         break
     elif [ "$error" != "$expectedErrorCode" ]; then
-        echo $(echo "$test" | jq -c '.post');
-        echo $response;
+        echo $(echo "$test" | jq -c '.post') | jq --indent 2 .;
+        echo $response | jq --indent 2 .;
         echo "[xatolik kodi mos kelmadi] $description"
         break
     else
