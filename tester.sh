@@ -35,11 +35,13 @@ jsonData=$(<template.json)
 merchantPrepareId=''
 merchantPrepareIdOld=''
 
-for k in $(seq 0 $(echo "$jsonData" | jq length)); do
+for k in $(seq 0 $(($(echo "$jsonData" | jq length) - 1))); do
+    echo "Test $(($k+1))"
+
     test=$(echo "$jsonData" | jq -r ".[$k]")
 
     merchantTransId=$(if [ "$k" == "7" ]; then echo $(shuf -i 999999999-999999999000 -n 1); else echo $MERCHANT_TRANS_ID; fi)
-    test=$(echo "$test" | jq ".post.merchant_trans_id = $merchantTransId")
+    test=$(echo "$test" | jq -c ".post.merchant_trans_id = \"$merchantTransId\"")
 
     test=$(echo "$test" | jq ".post.service_id = $SERVICE_ID")
 
@@ -54,7 +56,6 @@ for k in $(seq 0 $(echo "$jsonData" | jq length)); do
     if [ "$k" == "0" ] || [ "$k" == "2" ]; then
         test=$(echo "$test" | jq '.post.sign_string = "10a250d95b1a6afedcda8360a12a1341"')
     else
-        generateSignString "$(echo "$test" | jq -c '.post')" "$isCompleteAction"
         signString=$(generateSignString "$(echo "$test" | jq -c '.post')" "$isCompleteAction")
         test=$(echo "$test" | jq ".post.sign_string = \"$signString\"")
     fi
@@ -80,8 +81,10 @@ for k in $(seq 0 $(echo "$jsonData" | jq length)); do
         echo "[xatolik] $description"
         break
     elif [ "$error" != "$expectedErrorCode" ]; then
-        echo $(echo "$test" | jq -c '.post');
-        echo $response;
+        echo "Test: $test"
+        echo "Response: $response"
+        echo "Actual error code: $error"
+        echo "Expected error code: $expectedErrorCode"
         echo "[xatolik kodi mos kelmadi] $description"
         break
     else
@@ -91,4 +94,7 @@ for k in $(seq 0 $(echo "$jsonData" | jq length)); do
     if [ "$(echo "$test" | jq -r '.action')" == "prepare" ] && [ "$(echo "$response" | jq -r '.merchant_prepare_id')" != "null" ]; then
         merchantPrepareIdOld=$(echo "$response" | jq -r '.merchant_prepare_id')
     fi
+
+    echo "------------------------------------------------------------"
+    echo ""
 done
